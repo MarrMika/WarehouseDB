@@ -243,7 +243,7 @@ END
 ```
 
 ## 4. Queries
-#####1.Find user by id
+##### 1.Find user by id
 ```sql
 SELECT *
 FROM users
@@ -254,7 +254,7 @@ WHERE id = 1;
 |----|------------|-----------|-------|----------|------|--------------|--------------|--------|------------|------------|
 | 1  | Mariia     | Slobodian | slobodjanmarija1@gmail.com | 5f4dcc3b5aa765d61d8327deb882cf99 | ADMIN | 2019-01-01 00:00:00 | 2019-01-01 00:00:00 | TRUE | 03bfe72c-0d5d-11ea-8d71-362b9e155667 | 1 |
 
-#####2.Find user by email
+##### 2.Find user by email
 ```sql
 SELECT *
 FROM users
@@ -265,7 +265,7 @@ WHERE email = 'slobodjanmarija1@gmail.com';
 |----|------------|-----------|-------|----------|------|--------------|--------------|--------|------------|------------|
 | 1  | Mariia     | Slobodian | slobodjanmarija1@gmail.com | 5f4dcc3b5aa765d61d8327deb882cf99 | ADMIN | 2019-01-01 00:00:00 | 2019-01-01 00:00:00 | TRUE | 03bfe72c-0d5d-11ea-8d71-362b9e155667 | 1 |
 
-#####3.Find admin with particular account(account include defferent level of warehouses)
+##### 3.Find admin with particular account(account include defferent level of warehouses)
 ```sql
 SELECT *
 FROM users
@@ -277,7 +277,7 @@ AND account_id = 2;
 |----|------------|-----------|-------|----------|------|--------------|--------------|--------|------------|------------|
 | 4  | Taras     | Sokil | sokil.taras@gmail.com | 5f4dcc3b5aa765d61d8327deb834cf99 | ADMIN | 2019-07-01 00:00:00 | 2019-07-01 00:00:00 | TRUE | 03bfe72c-0d5d-11ea-8d71-362b78155667 | 2 |
 
-#####4.Find all account possible to upgrage
+##### 4.Find all account possible to upgrage
 ```sql
 SELECT *
 FROM account_types
@@ -289,7 +289,7 @@ AND active = true;
 |----|------------|-----------|-------|----------|------|--------------|--------------|--------|------------|
 | 2  | premium | 300 | 2 | 1000 | 1000 | 10000 | 10000 | 10000 | true |
 
-#####5.Find popular products
+##### 5.Find popular products
 ```sql
 SELECT it.name_item AS name,
 sum(ts.quantity) AS quantity
@@ -305,7 +305,7 @@ WHERE type = 'OUT';
 |2   | Bonakva 	 |120| 
 |3   |Artesiancka|90 |
 
-#####6.Find ended products by account_id
+##### 6.Find ended products by account_id
 ```sql
 SELECT wh.id, wh.name, it.name_item, si.quantity
  FROM saved_items si
@@ -322,7 +322,7 @@ SELECT wh.id, wh.name, it.name_item, si.quantity
 |2   | House |Devaytis   | 5        |
 |3   | Room  |Bonakva    | 15       |
 
-#####7.Find particular transaction
+##### 7.Find particular transaction
 ```sql
 select * 
 from transactions 
@@ -333,7 +333,7 @@ where id = 2;
 |-----------|------------|-----------|--------------|---------|----------|------------|----------|------|
 |2020-01-20 00:30:00| 2  |      2    |      null    |    2    |     1    |     22     |    5     | MOVE |
 
-#####8.Find products related with particular account
+##### 8.Find products related with particular account
 ```sql
 select *
 from items
@@ -345,7 +345,7 @@ where account_id=2;
 |2   |Bonakva 	 |block| low carbonated mineral water   |6 	|1 	|2|
 |3   |Artesiancka|block| high carbonated mineral water  |9 	|1 	|2|
 
-#####9.Find number of warehouses in account
+##### 9.Find number of warehouses in account
 ```sql
 SELECT COUNT(id)
 FROM warehouses
@@ -357,7 +357,7 @@ AND account_id = 2;
 |-------|
 |2      |
 
-#####10.Find warehouse level
+##### 10.Find warehouse level
 ```sql
 WITH RECURSIVE cte AS
             (SELECT id, 1 as depth
