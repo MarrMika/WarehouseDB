@@ -372,8 +372,8 @@ WITH RECURSIVE cte AS
              WHERE cte.id = 2
 ```
 ##### Результат
-| id    | depth| 
-|-------|------|
-|2      |  1   |
+| depth| 
+|------|
+|  1   |
 
 ## 5. The rest queries in file `dump.sql`
